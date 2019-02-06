@@ -1,0 +1,71 @@
+<html>
+    <script src="node_modules/jquery/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <body style="padding:100px; background-color:rgba(0, 166, 255, 0.447);">              
+      <div id='app'>
+        <h1>{{ title }}</h1>
+        <br><br><br>
+        <div class="row">
+          <div class="col-6">   
+            <form>
+              <!-- 1 STEP -->
+              <h2>Add a new tweet</h2>
+              <input class="form-control" v-model="author" type="text" placeholder="author">
+              <input class="form-control"  v-model="message"type="text" placeholder="message">
+              <br>
+              <button type="button" v-on:click="newTweet" class="btn btn-secondary btn-sm float-right">Send</button>
+              <br><br>
+              <!-- 2 STEP -->
+              <h2>Remove tweet</h2>
+              <input class="form-control" v-model="Id" type="text" placeholder="Id">
+              <br>
+              <button type="button" v-on:click="removeTweet" class="btn btn-secondary btn-sm float-right">Remove</button>
+              <br><br>
+              <!-- 3 STEP -->
+              <h2>Read a tweet by author</h2>
+              <input class="form-control" v-model="author" type="text" placeholder="author">
+              <br>
+              <button type="button" v-on:click="showAuthor" class="btn btn-secondary btn-sm float-right">Search</button>
+              <br><br>
+              <!-- 4 STEP -->
+              <h2>Read a tweet by a word</h2>
+              <input class="form-control" v-model="message" type="text" placeholder="author">
+              <br>
+              <button type="button" v-on:click="showWord" class="btn btn-secondary btn-sm float-right">Search</button>
+              <br><br>
+              <!-- 5 STEP -->
+              <h2>Read a tweet by Id</h2>
+              <input class="form-control" v-model="Id" type="text" placeholder="Id">
+              <br>
+              <button type="button" v-on:click="readTweetById" class="btn btn-secondary btn-sm float-right">Search</button>
+              <br><br>
+              <li class="list-group-item" v-if="tweets">
+                id: {{tweets? tweets.id: null}}<br>
+                author: {{tweets? tweets.author: null}}<br>
+                message: {{tweets? tweets.message: null}}<br> 
+              </li>  
+              <br><br>
+            </form>
+          </div>
+              <!-- STEP see all Tweet -->
+          <div class="col-5 offset-1">
+            <h2>See all tweet  <button type="button" class="btn btn-secondary btn-sm"v-on:click="view">View</button></h2>
+            <br>
+            <div class="row list-group" v-for="tweet in tweets">
+              <div class="list-group-item">
+                <div class="column">id: {{ tweet.id }}</div>
+                <div class="column">author: {{ tweet.author }}</div>
+                <div class="column">message: {{ tweet.message }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>                                    
+    </body>
+    <script src="./app.js"></script>
+  </html>

@@ -1,0 +1,22 @@
+{
+  "name": "client_tweet",
+  "version": "1.0.0",
+  "description": "Exam Vue 06/02/2019",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "salvatore bonaccorso",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^1.9.1",
+    "popper.js": "^1.14.7",
+    "vue": "^2.6.2",
+    "vue-resource": "^1.5.1"
+  },
+  "devDependencies": {}
+}
