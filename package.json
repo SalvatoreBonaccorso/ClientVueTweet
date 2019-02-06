@@ -18,5 +18,13 @@
     "vue": "^2.6.2",
     "vue-resource": "^1.5.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalvatoreBonaccorso/ClientVueTweet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SalvatoreBonaccorso/ClientVueTweet/issues"
+  },
+  "homepage": "https://github.com/SalvatoreBonaccorso/ClientVueTweet#readme"
 }
